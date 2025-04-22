@@ -24,8 +24,8 @@ st.write("You selected:", option)
 
 
 
-cnx = st.connection("snowflake")
-Session = cnx.session()
+conn = st.connection("snowflake")
+Session = conn.session()
 my_dataframe = Session.table("smoothies.public.fruit_options").select(col('fruit_name'))
 st.dataframe(data=my_dataframe, use_container_width=True)
 ingredients_list = st.multiselect('choose upto four ingredients:'
