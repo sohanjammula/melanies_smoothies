@@ -28,7 +28,7 @@ st.write("You selected:", option)
 
 conn = st.connection("snowflake")
 Session = conn.session()
-my_dataframe = Session.table("smoothies.public.fruit_options").select(col('fruit_name'))
+my_dataframe = Session.table("smoothies.public.fruit_options").select(col('fruit_name'),col('search_on'))
 #st.dataframe(data=my_dataframe, use_container_width=True)
 
 pd_df = my_dataframe.to_pandas()
